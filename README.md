@@ -17,8 +17,11 @@
 ## 核心功能與技術亮點
 
 **混合結構文本處理**：保險合約充滿了表格（理賠金額）、清單（除外責任）與長篇法律術語 ，本系統透過優化的 PDF 解析（Parsing）與分塊（Chunking）技術，完美消化混合結構文本 。
+
 **高精度語意歧義分辨**：整合頂尖中文 Embedding（語意向量）模型，能精確捕捉並分辨保單術語中細微的語意歧義（例如：「出發飛機延後」與「回程飛機延後」在合約定義中非常嚴謹的理賠差異） 。
+
 **複合邏輯推理能力**：面對旅平險常見的「多層條件」邏輯（例如：「若在特定國家且住院超過 3 天，則加成 5%」） ，系統能提供準確的上下文供模型進行複雜推理。
+
 **嚴格的防幻覺機制 (Anti-Hallucination)**：設計嚴謹的 System Prompt 與極低溫度控制 。
 若檢索內容未提及相關規定，系統會引導模型主動拒答（如回答：「抱歉，根據目前條款未能找到相關理賠規定」），杜絕商業保險中最忌諱的 AI 幻覺 。
 
@@ -29,8 +32,11 @@
 本專案完整掌握全棧 AI 鏈結，展現高水準的 **AI Orchestration (AI 編排)** 能力 ：
 
 1. **資料清洗與收集 (Data Clean & Parsing)**：使用 `PyPDFLoader` 批次解析專案目錄下的保單條款 PDF ，並在走訪過程中將檔案名稱動態寫入 `metadata` 確保可溯源性 。
+
 2. **客製化文本切分 (Text Splitting)**：採用 `RecursiveCharacterTextSplitter` 限制 `chunk_size=500`、`chunk_overlap=100` 。特別針對台灣保單排版，自訂 `separators=["\n第", "\n一、", "\n\n", "\n", " "]` 作為切分依據，避免法律條文脈絡中途斷裂。
+
 3. **向量資料庫儲存 (Vector DB)**：利用 `Chroma` 向量資料庫建立本地端索引與管理檢索演算法 。
+
 4. **語意檢索與生成 (Retrieval & Generation)**：透過語意相似度檢索動態抓取最相關的 3 個條款區塊，投遞給開源對話推理引擎進行嚴謹的條款推理，並在句尾標註資料出處 [cite: 17]。
 
 ---
@@ -56,43 +62,59 @@
 ## 環境建置與快速開始
 
 ### 1. 建立虛擬環境
+
 本專案建議使用 Anaconda 建立獨立的 Python 3.10 執行環境：
+
 ```bash
 conda create -n rag python=3.10 -y
 conda activate rag
 ```
 
 ###2. 安裝 PyTorch (支援 CUDA GPU 加速)
+
 為確保本地端語意向量模型（Embedding Model）能發揮完整硬體效能，請先安裝支援 CUDA 的 PyTorch 核心：
+
 ```Bash
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
 ```
 
 ###3. 安裝項目依賴套件
+
 透過專案內附的極簡版 `requirements.txt` 快速安裝所有 RAG 系統必要套件：
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ###4.配置環境變數與啟動服務
+
 請在專案根目錄下建立一個名為 `.env` 的文字檔案。
+
 在 `.env` 檔案內寫入您的 Hugging Face 存取憑證：
+
 ```bash
 HUGGINGFACEHUB_API_TOKEN=your_huggingface_api_token_here
 ```
 
 ### 5. 啟動系統（支援雙模式執行）
+
 本系統支援傳統的 **Jupyter Lab 互動式筆記本**，亦可直接轉換為 **標準 Python 腳本（.py）** 於終端機執行。
+
 ####模式 A：使用 Jupyter Lab 執行（推薦用於開發與調試）
+
 ```bash
 jupyter lab
 ```
 ###模式 B：使用純 Python 腳本執行（推薦用於自動化與輕量執行）
+
 1.一鍵轉換腳本：
+
 ```bash
 jupyter nbconvert --to script RAG正式版.ipynb
 ```
+
 2.直接執行程式：
+
 ```bash
 python RAG正式版.py
 ```
