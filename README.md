@@ -81,7 +81,7 @@ HUGGINGFACEHUB_API_TOKEN=your_huggingface_api_token_here
 
 ### 5. 啟動系統（支援雙模式執行）
 本系統支援傳統的 **Jupyter Lab 互動式筆記本**，亦可直接轉換為 **標準 Python 腳本（.py）** 於終端機執行。
-#### 🔹 模式 A：使用 Jupyter Lab 執行（推薦用於開發與調試）
+####模式 A：使用 Jupyter Lab 執行（推薦用於開發與調試）
 ```bash
 jupyter lab
 ```
