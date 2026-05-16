@@ -70,7 +70,7 @@ conda create -n rag python=3.10 -y
 conda activate rag
 ```
 
-###2. 安裝 PyTorch (支援 CUDA GPU 加速)
+### 2. 安裝 PyTorch (支援 CUDA GPU 加速)
 
 為確保本地端語意向量模型（Embedding Model）能發揮完整硬體效能，請先安裝支援 CUDA 的 PyTorch 核心：
 
@@ -78,7 +78,7 @@ conda activate rag
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
 ```
 
-###3. 安裝項目依賴套件
+### 3. 安裝項目依賴套件
 
 透過專案內附的極簡版 `requirements.txt` 快速安裝所有 RAG 系統必要套件：
 
@@ -86,7 +86,7 @@ conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvi
 pip install -r requirements.txt
 ```
 
-###4.配置環境變數與啟動服務
+### 4.配置環境變數與啟動服務
 
 請在專案根目錄下建立一個名為 `.env` 的文字檔案。
 
@@ -100,12 +100,12 @@ HUGGINGFACEHUB_API_TOKEN=your_huggingface_api_token_here
 
 本系統支援傳統的 **Jupyter Lab 互動式筆記本**，亦可直接轉換為 **標準 Python 腳本（.py）** 於終端機執行。
 
-####模式 A：使用 Jupyter Lab 執行（推薦用於開發與調試）
+**模式 A：使用 Jupyter Lab 執行（推薦用於開發與調試）
 
 ```bash
 jupyter lab
 ```
-###模式 B：使用純 Python 腳本執行（推薦用於自動化與輕量執行）
+**模式 B：使用純 Python 腳本執行（推薦用於自動化與輕量執行）
 
 1.一鍵轉換腳本：
 
