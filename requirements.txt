@@ -1,1 +1,8 @@
--e "langchain\nlangchain-community\nlangchain-huggingface\nchromadb\npypdf\npython-dotenv\njupyterlab\nhuggingface_hub" 
+langchain
+langchain-community
+langchain-huggingface
+chromadb
+pypdf
+python-dotenv
+jupyterlab
+huggingface_hub
