@@ -48,3 +48,49 @@
 ├── 海外突發疾病醫療健康保險附約示範條款.pdf
 ├── Insurance2026.pdf
 └── overseas_travel.pdf
+```
+---
+
+## 環境建置與快速開始
+
+### 1. 建立虛擬環境
+本專案建議使用 Anaconda 建立獨立的 Python 3.10 執行環境：
+```bash
+conda create -n rag python=3.10 -y
+conda activate rag
+```
+
+###2. 安裝 PyTorch (支援 CUDA GPU 加速)
+為確保本地端語意向量模型（Embedding Model）能發揮完整硬體效能，請先安裝支援 CUDA 的 PyTorch 核心：
+```Bash
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
+```
+
+###3. 安裝項目依賴套件
+透過專案內附的極簡版 `requirements.txt` 快速安裝所有 RAG 系統必要套件：
+```bash
+pip install -r requirements.txt
+```
+
+###4.配置環境變數與啟動服務
+請在專案根目錄下建立一個名為 `.env` 的文字檔案。
+在 `.env` 檔案內寫入您的 Hugging Face 存取憑證：
+```bash
+HUGGINGFACEHUB_API_TOKEN=your_huggingface_api_token_here
+```
+
+### 5. 啟動系統（支援雙模式執行）
+本系統支援傳統的 **Jupyter Lab 互動式筆記本**，亦可直接轉換為 **標準 Python 腳本（.py）** 於終端機執行。
+#### 🔹 模式 A：使用 Jupyter Lab 執行（推薦用於開發與調試）
+```bash
+jupyter lab
+```
+###模式 B：使用純 Python 腳本執行（推薦用於自動化與輕量執行）
+1.一鍵轉換腳本：
+```bash
+jupyter nbconvert --to script RAG正式版.ipynb
+```
+2.直接執行程式：
+```bash
+python RAG正式版.py
+```
