@@ -5,9 +5,11 @@
 [![VectorDB](https://img.shields.io/badge/VectorDB-Chroma-orange.svg)](https://github.com/chroma-core/chroma)
 
 本專案是一個基於 **RAG (Retrieval-Augmented Generation, 檢索增慢生成)** 架構的智能保險諮詢系統 。
+
 專門針對台灣複雜的「海外旅行平安保險」與「旅行不便險」條款進行語意解析，打造一個專屬的 AI 保險專員，協助使用者或親朋好友在投保前徹底解答理賠疑慮 。
 
 傳統大語言模型（LLM）因存在知識過時與幻覺（Hallucination）等致命缺點，無法直接滿足嚴謹的企業與金融需求 。
+
 本專案建立「正確性優先」與「講對話」的核心思維 ，透過深度預處理將私有化的 PDF 保單條款進行向量化 ，利用向量資料庫高效抓取最相關的文本切片（約 500 字）投遞給 AI 讀取 ，在大幅節省 Token 成本並提升回應速度的同時 ，強迫 AI 具備 100% 的答案可溯源性（Citations），能精確標註條款出處 。
 
 ---
