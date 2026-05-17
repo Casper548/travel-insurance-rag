@@ -4,7 +4,7 @@
 [![LangChain](https://img.shields.io/badge/Framework-LangChain-red.svg)](https://github.com/langchain-ai/langchain)
 [![VectorDB](https://img.shields.io/badge/VectorDB-Chroma-orange.svg)](https://github.com/chroma-core/chroma)
 
-本專案是一個基於 **RAG (Retrieval-Augmented Generation, 檢索增慢生成)** 架構的智能保險諮詢系統 。
+本專案是一個基於 **RAG (Retrieval-Augmented Generation, 檢索增強生成)** 架構的智能保險諮詢系統 。
 
 專門針對台灣複雜的「海外旅行平安保險」與「旅行不便險」條款進行語意解析，打造一個專屬的 AI 保險專員，協助使用者或親朋好友在投保前徹底解答理賠疑慮 。
 
