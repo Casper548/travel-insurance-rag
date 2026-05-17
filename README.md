@@ -21,7 +21,7 @@
 
 AI 工具 ：ChatGPT (OpenAI API) 和 Gemini
 
-AI 模型:BAAI/bge-m3、Llama-3.1-8B-Instruct
+AI 模型 :BAAI/bge-m3、Llama-3.1-8B-Instruct
 
 執行環境：Python 3.12.9 (使用 Jupyter Notebook / Anaconda)
 
