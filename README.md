@@ -29,7 +29,7 @@ RAG 核心框架：LangChain (包含 PyPDFLoader, RecursiveCharacterTextSplitter
 
 向量資料庫：Chroma (本地端向量資料庫)
 
-資料來源：私有化 PDF 保單條款文件 (overseas_travel.pdf)
+資料來源：私有化 PDF 保單條款文件 
 
 版本控制：Git + GitHub
 
