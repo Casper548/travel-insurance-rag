@@ -73,9 +73,8 @@ pip install -r requirements.txt
 ```text
 .
 ├── RAG正式版.ipynb         
-├── README.md               
-├── requirements.txt        
-└── overseas_travel.pdf
+├── README.md                 
+└── requirements.txt 
 ```
 ---
 
