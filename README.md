@@ -13,6 +13,33 @@
 本專案建立「正確性優先」與「講對話」的核心思維 ，透過深度預處理將私有化的 PDF 保單條款進行向量化 ，利用向量資料庫高效抓取最相關的文本切片（約 500 字）投遞給 AI 讀取 ，在大幅節省 Token 成本並提升回應速度的同時 ，強迫 AI 具備 100% 的答案可溯源性（Citations），能精確標註條款出處 。
 
 ---
+## 環境建置與快速開始
+
+### 1. 建立虛擬環境
+
+本專案建議使用 Anaconda 建立獨立的 Python 3.12.9 執行環境：
+
+```bash
+conda create -n rag python=3.12.9 -y
+conda activate rag
+```
+
+### 2. 安裝 PyTorch (支援 CUDA GPU 加速)
+
+為確保本地端語意向量模型（Embedding Model）能發揮完整硬體效能，請先安裝支援 CUDA 的 PyTorch 核心：
+
+```Bash
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
+```
+
+### 3. 安裝項目依賴套件
+
+透過專案內附的極簡版 `requirements.txt` 快速安裝所有 RAG 系統必要套件：
+
+```bash
+pip install -r requirements.txt
+```
+---
 
 ## 核心功能與技術亮點
 
@@ -45,76 +72,13 @@
 
 ```text
 .
-├── RAG正式版.ipynb         # 系統核心主程式 (Jupyter Notebook)
-├── README.md               # 本專案說明文件
-├── .gitignore              # Git 屏蔽配置檔（已隔離 .env 密鑰與暫存檔）
-├── requirements.txt        # 核心環境相依套件清單（一行一個極簡格式）
-├── 01.臺灣產物旅遊綜合保險_保單條款.pdf
-├── 個人海外旅行不便保險旅程更改費用傳染病及檢疫給付附加條款.PDF
-├── 個人海外旅行不便保險旅程取消費用傳染病及檢疫給付附加條款.PDF
-├── 旅行平安保險單示範條款1090708.pdf
-├── 海外突發疾病醫療健康保險附約示範條款.pdf
-├── Insurance2026.pdf
+├── RAG正式版.ipynb         
+├── README.md               
+├── requirements.txt        
 └── overseas_travel.pdf
 ```
 ---
 
-## 環境建置與快速開始
 
-### 1. 建立虛擬環境
 
-本專案建議使用 Anaconda 建立獨立的 Python 3.10 執行環境：
 
-```bash
-conda create -n rag python=3.10 -y
-conda activate rag
-```
-
-### 2. 安裝 PyTorch (支援 CUDA GPU 加速)
-
-為確保本地端語意向量模型（Embedding Model）能發揮完整硬體效能，請先安裝支援 CUDA 的 PyTorch 核心：
-
-```Bash
-conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia -y
-```
-
-### 3. 安裝項目依賴套件
-
-透過專案內附的極簡版 `requirements.txt` 快速安裝所有 RAG 系統必要套件：
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4.配置環境變數與啟動服務
-
-請在專案根目錄下建立一個名為 `.env` 的文字檔案。
-
-在 `.env` 檔案內寫入您的 Hugging Face 存取憑證：
-
-```bash
-HUGGINGFACEHUB_API_TOKEN=your_huggingface_api_token_here
-```
-
-### 5. 啟動系統（支援雙模式執行）
-
-本系統支援傳統的 **Jupyter Lab 互動式筆記本**，亦可直接轉換為 **標準 Python 腳本（.py）** 於終端機執行。
-
-**模式 A：使用 Jupyter Lab 執行（推薦用於開發與調試）
-
-```bash
-jupyter lab
-```
-**模式 B：使用純 Python 腳本執行（推薦用於自動化與輕量執行）
-
-1.一鍵轉換腳本：
-
-```bash
-jupyter nbconvert --to script RAG正式版.ipynb
-```
-
-2.直接執行程式：
-
-```bash
-python RAG正式版.py
-```
