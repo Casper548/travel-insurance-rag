@@ -90,15 +90,7 @@ pip install -r requirements.txt
 
 ---
 
-## 專案目錄結構
 
-```text
-.
-├── RAG正式版.ipynb         
-├── README.md                 
-└── requirements.txt 
-```
----
 
 
 
