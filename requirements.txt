@@ -6,4 +6,3 @@ pypdf
 python-dotenv
 huggingface_hub
 jupyterlab
- 
