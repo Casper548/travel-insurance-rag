@@ -89,6 +89,8 @@ pip install -r requirements.txt
 4. **語意檢索與生成 (Retrieval & Generation)**：透過語意相似度檢索動態抓取最相關的 3 個條款區塊，投遞給開源對話推理引擎進行嚴謹的條款推理，並在句尾標註資料出處 。
 
 ---
+
+
 <img width="1092" height="101" alt="Image" src="https://github.com/user-attachments/assets/d96c2ed1-ef19-4cc0-811e-14b6a0fbf2a0" />
 
 <img width="756" height="516" alt="Image" src="https://github.com/user-attachments/assets/f267f034-95de-4bd3-8dbb-c7b443b4bbd4" />
