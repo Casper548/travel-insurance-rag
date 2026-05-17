@@ -13,6 +13,26 @@
 本專案建立「正確性優先」與「講對話」的核心思維 ，透過深度預處理將私有化的 PDF 保單條款進行向量化 ，利用向量資料庫高效抓取最相關的文本切片（約 500 字）投遞給 AI 讀取 ，在大幅節省 Token 成本並提升回應速度的同時 ，強迫 AI 具備 100% 的答案可溯源性（Citations），能精確標註條款出處 。
 
 ---
+## 開發環境與技術棧 (Tech Stack)
+
+作業系統：Windows 10 / 11
+
+開發 IDE：Visual Studio Code (VSCode)
+
+AI 工具 / 模型：ChatGPT (OpenAI API) 或 Gemini
+
+執行環境：Python 3.12.9 (使用 Jupyter Notebook / Anaconda)
+
+RAG 核心框架：LangChain (包含 PyPDFLoader, RecursiveCharacterTextSplitter)
+
+向量資料庫：Chroma (本地端向量資料庫)
+
+資料來源：私有化 PDF 保單條款文件 (overseas_travel.pdf)
+
+版本控制：Git + GitHub
+
+---
+
 ## 環境建置與快速開始
 
 ### 1. 建立虛擬環境
