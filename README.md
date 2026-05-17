@@ -35,7 +35,7 @@ RAG 核心框架：LangChain (包含 PyPDFLoader, RecursiveCharacterTextSplitter
 
 ---
 
-## 環境建置與快速開始
+## 安裝方式
 
 ### 1. 建立虛擬環境
 
