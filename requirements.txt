@@ -4,5 +4,6 @@ langchain-huggingface
 chromadb
 pypdf
 python-dotenv
-jupyterlab
 huggingface_hub
+jupyterlab
+ 
