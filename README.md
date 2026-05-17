@@ -49,7 +49,7 @@ pip install -r requirements.txt
 
 **複合邏輯推理能力**：面對旅平險常見的「多層條件」邏輯，系統能提供準確的上下文供模型進行複雜推理。
 
-**嚴格的防幻覺機制 (Anti-Hallucination)**：設計嚴謹的 System Prompt 與極低溫度控制 。
+**嚴格的防幻覺機制 (Anti-Hallucination)**：設計嚴謹的 System Prompt  。
 若檢索內容未提及相關規定，系統會引導模型主動拒答（如回答：「抱歉，根據目前條款未能找到相關理賠規定」），杜絕商業保險中最忌諱的 AI 幻覺 。
 
 ---
