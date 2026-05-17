@@ -19,7 +19,9 @@
 
 開發 IDE：Visual Studio Code (VSCode)
 
-AI 工具 / 模型：ChatGPT (OpenAI API) 或 Gemini
+AI 工具 ：ChatGPT (OpenAI API) 和 Gemini
+
+AI 模型:BAAI/bge-m3、Llama-3.1-8B-Instruct
 
 執行環境：Python 3.12.9 (使用 Jupyter Notebook / Anaconda)
 
